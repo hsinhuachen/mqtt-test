@@ -1,0 +1,154 @@
+.lang-container{
+	position: fixed;
+	right: 30px;
+	top: 25px;
+	z-index: 992;
+}
+
+.lang-switcher {
+	vertical-align: middle;
+	input[type="checkbox"] {
+	    display: none;
+	}
+}
+
+.lang-opt, .lang-opt a{
+	color: #E0E3E7;
+	font-size: 1.2rem;
+	cursor: pointer;
+	vertical-align: middle;
+	@include transition(color .6s ease);
+	&:hover, &.active a{
+		color: #74858d;
+	}
+}
+
+.lang-opt-en{
+	text-transform: uppercase;
+}
+
+.lcs_wrap {
+	display: inline-block;	
+	direction: ltr;
+    vertical-align: middle;
+}
+.lcs_wrap input {
+	display: none;	
+}
+
+.lcs_switch {
+	display: inline-block;	
+	position: relative;
+	width: 40px;
+	height: 20px;
+	margin: 0 8px;
+	border-radius: 100px;
+	background: #ddd;
+	overflow: hidden;
+	cursor: pointer;
+	@include transform(translateY(2px));
+	
+	-webkit-transition: all .2s ease-in-out;  
+	-ms-transition: 	all .2s ease-in-out; 
+	transition: 		all .2s ease-in-out; 
+}
+
+@media (max-width: 767px) {
+	.lcs_switch {
+	}	
+}
+
+.lcs_cursor {
+	display: inline-block;
+	position: absolute;
+	top: 4px;	
+	width: 11px;
+	height: 11px;
+	border-radius: 100%;
+	background: #74858d;
+	z-index: 10;
+	
+	-webkit-transition: all .2s linear;  
+	-ms-transition: 	all .2s linear; 
+	transition: 		all .2s linear; 
+}
+.lcs_label {
+    font-size: 12px;
+	letter-spacing: 1px;
+	line-height: 18px;
+	color: #fff;
+	font-weight: bold;
+	position: absolute;
+	width: 33px;
+	top: 5px;
+	overflow: hidden;
+	text-align: center;
+	opacity: 0;
+	display: none;
+	
+	-webkit-transition: all .2s ease-in-out .1s;  
+	-ms-transition: 	all .2s ease-in-out .1s;   
+	transition: 		all .2s ease-in-out .1s;   
+}
+.lcs_label.lcs_label_on {
+	left: -70px;
+	z-index: 6;	
+}
+.lcs_label.lcs_label_off {
+	right: -70px;
+	z-index: 5;	
+}
+
+
+/* on */
+.lcs_switch.lcs_on {
+	background: #e0e3e7;
+}
+.lcs_switch.lcs_on .lcs_cursor {
+	left: 21px;
+}
+.lcs_switch.lcs_on .lcs_label_on {
+	left: 10px;	
+	opacity: 1;
+}
+
+
+/* off */
+.lcs_switch.lcs_off {
+	background: #e0e3e7;
+}
+.lcs_switch.lcs_off .lcs_cursor {
+	left: 3px;
+}
+.lcs_switch.lcs_off .lcs_label_off {
+	right: 10px;
+	opacity: 1;	
+}
+
+/* disabled */
+.lcs_switch.lcs_disabled {
+	opacity: 0.65;
+	filter: alpha(opacity=65);	
+	cursor: default;
+}
+
+@media (max-width: 767px) {
+	.lang-container{
+		top: 14px;
+		right: 15px;
+	}
+
+	.lcs_switch{
+		width: 34px;
+		height: 17px;
+		margin: 0 5px;
+	}
+
+	.lcs_cursor{
+		top: 3px;
+	}
+
+	.lang-opt{
+		font-size: 1.1rem;
+	}
+}

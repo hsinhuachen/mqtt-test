@@ -1,0 +1,26 @@
+#indexSummary.carousel-fade .carousel-item {
+    opacity: 0;
+    @include transition(opacity .6s ease);
+}
+
+#indexSummary.carousel-fade  .carousel-item.active,
+#indexSummary.carousel-fade  .carousel-item-next.carousel-item-left,
+#indexSummary.carousel-fade  .carousel-item-prev.carousel-item-right {
+    opacity: 1;
+}
+
+#indexSummary.carousel-fade .active.carousel-item-left,
+#indexSummary.carousel-fade  .active.carousel-item-right {
+    opacity: 0;
+}
+
+#indexSummary.carousel-fade  .carousel-item-next,
+#indexSummary.carousel-fade .carousel-item-prev,
+#indexSummary.carousel-fade .carousel-item.active,
+#indexSummary.carousel-fade .active.carousel-item-left,
+#indexSummarys.carousel-fade  .active.carousel-item-prev {
+	@media (min-width: 768px) {
+	    transform: translateX(0);
+	    transform: translate3d(0, 0, 0);
+	}
+}

@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+$font-family: "PingFang TC", "Helvetica Neue","Helvetica","Microsoft JhengHei", 微軟正黑體, sans-serif;
+$font-roboto: Roboto, "PingFang TC", "Helvetica Neue","Helvetica","Microsoft JhengHei", 微軟正黑體, sans-serif;
+// $text-color: #74858D;
+$text-color: #54646E;
+$gray-color: #54646E;
+$parmary-color: #586BA4;
+
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+@import "compass/css3/box-shadow";
+
+@import url("vendors/bootstrap.min.css");
+@import url("vendors/solid.css");
+@import url("vendors/fontawesome.min.css");
+// @import "./vendors/_gird";
+// @import "./vendors/_carousel-fade";
+@import "./_custom";
+
+
+/* Layouts */
+@import "./components/_nav";
+@import "./components/lc_switch";
+@import "./components/_ck-content";
+@import "./components/_footer";
+
+@import "./_index";
+@import "./_article";
+@import "./_error";

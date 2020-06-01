@@ -1,0 +1,250 @@
+.ck-content{ width: 100%; margin:0 auto; color: $gray-color; }
+.ck-content h1{ font-size: 24px; font-weight: bold; padding: 15px 0;}
+.ck-content h2{ font-size: 22px; font-weight: bold; padding: 15px 0;}
+.ck-content h3{ font-size: 20px; font-weight: bold; padding: 15px 0;}
+.ck-content h4{ color: #15246C; font-size: 18px; line-height: 160%; font-weight: 400; padding: 15px 0;}
+.ck-content h5{ font-size: 16px; font-weight: 400; padding: 15px 0;}
+.ck-content h6{ font-size: 14px; font-weight: 400; padding: 15px 0;}
+
+.ck-content hr{ border-top: 1px solid $gray-color;}
+
+.ck-content a {
+	color: $parmary-color;
+	display: inline-block;
+	/* These are technically the same, but use both */
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+
+	-ms-word-break: break-all;
+	/* This is the dangerous one in WebKit, as it breaks things wherever */
+	word-break: break-all;
+	/* Instead use this non-standard one: */
+	word-break: break-word;
+
+	/* Adds a hyphen where the word breaks, if supported (No Blink) */
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+}
+
+.ck-content a.url{
+	color: #FF0000;
+	font-size: 16px;
+}
+
+.ck-content ul{
+	margin-left: -15px;
+}
+
+.ck-content ol{
+	padding: 0;
+}
+
+.ck-content p, .ck-content li{
+	color: $text-color;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 0;
+    line-height: 32px;
+    margin-bottom: 20px;
+    opacity: .9;
+}
+
+.lang-zh .ck-content p, .lang-zh  .ck-content li{
+	text-align: justify;
+}
+
+.ck-content sup{ font-size: 16px;}
+
+.ck-content sup a{ color: $gray-color;}
+.ck-content p a:hover{ text-decoration: underline; }
+// .ck-content p img {}
+.ck-content p img+span{ display: block; color: #000;}
+.ck-content blockquote{
+	line-height: 28px;
+	font-size: 20px;
+	color: #000;
+	position: relative;
+	padding: 30px 40px;
+	width: calc(100% - 80px);
+	margin: 10px auto;
+	border-left: 2px solid $gray-color;
+}
+
+.ck-content ol{
+	display: block;
+	list-style-type: decimal;
+	color: #000;
+	list-style-position: inside;
+}
+
+.ck-content img {
+	margin: 10px auto 20px auto;
+	max-width: 100%;
+	width: auto;
+}
+
+.ck-content .full-width {
+	width: 100vw;
+	max-width: 9999px;
+	margin-left: calc(-100vw / 2 + 794px / 2);
+	margin-right: calc(-100vw / 2 + 794px / 2);
+}
+
+@media (max-width: 991px){
+  	.ck-content .full-width {
+		margin-left: calc(-100vw / 2 + 674px / 2);
+		margin-right: calc(-100vw / 2 + 674px / 2);
+	}
+
+	.article-inside .ck-content .full-width {
+		margin-left: calc(-100vw / 2 + 585px / 2);
+		margin-right: calc(-100vw / 2 + 585px / 2);
+	}
+}
+
+@media (max-width: 767px){
+	.ck-content .full-width {
+		margin-left: calc(-100vw / 2 + 510px / 2);
+		margin-right: calc(-100vw / 2 + 510px / 2);
+	}
+
+	.article-inside .ck-content .full-width {
+		margin-left: calc(-100vw / 2 + 405px / 2);
+		margin-right: calc(-100vw / 2 + 405px / 2);
+	}
+}
+
+@media (max-width: 575px){
+	.ck-content .full-width {
+		width: 100vw;
+		margin-left: -15px !important;
+		margin-right: -15px !important;
+	}
+}
+
+.figcaption{
+	position: relative;
+	.carousel-indicators{
+		position: absolute;
+		right: calc(4% + 25px);
+		bottom: 60px;
+	}
+}
+
+.ck-content{
+	.ck-table{
+		width: calc(100% + 68px * 2);
+		border-radius: 26px;
+		box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.13);
+		background-color: #ffffff;
+		background-image: url('../imgs/summary_bg.png');
+	    background-repeat: no-repeat;
+	    background-position: left 60px bottom -55px;
+		padding: 28px 68px 33px 68px;
+		margin: 50px -68px;
+		position: relative;
+		&:before{
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 36px;
+			background: #24569D;
+			border-radius: 26px 0 0 26px;
+		}
+	}
+	table{
+		border-collapse: separate;
+		border-spacing: 10px 0;
+		th{
+			text-align: center;
+		}
+		/*td{
+			text-align: right;
+		}*/
+		thead th{
+			font-size: 18px;
+			font-family: $font-roboto;
+			font-weight: 700;
+			line-height: 24px;
+			letter-spacing: -0.2px;
+			padding-bottom: 8px;
+			border-bottom: 1px solid $gray-color;
+		}
+		tbody th, tbody td{
+			color: $text-color;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 200%;
+		  	padding: 15px 0 10px 0;
+		  	border-bottom: 1px solid #e4ebf0;
+		}
+	}
+}
+
+@media (max-width: 991px){
+	.ck-content{
+		.ck-table{
+			width: 100%;
+			margin-left: 0;	
+			margin-right: 0;
+			padding-left: 48px;
+			padding-right: 8px;
+		}
+	}
+}
+
+@media (max-width: 767px){
+	.ck-content{
+	    padding-left: 0;
+	    padding-right: 0;
+		.ck-table{
+			position: relative;
+			margin-top: 0;
+			padding-left: 30px;
+			overflow: auto;
+			&:before{
+				width: 20px;
+			}
+			th{
+				min-width: 140px;
+			}
+		}
+	}
+}
+
+@media (max-width: 575px){
+	.ck-content{
+	    padding-left: 0;
+	    padding-right: 0;
+		.ck-table{
+			width: 100vw;
+			margin-left: -15px;	
+			margin-right: -15px;
+		}
+	}
+}
+
+.ck-content .cycle{
+	padding-bottom: 28px;
+	img{
+		margin-bottom: 8px;
+	}
+}
+
+
+
+@media (max-width:767px){
+	.editor_article{ padding: 12px 0;}
+  	.ck-content blockquote{ font-size: 16px; line-height: 24px; width: calc(100% - 48px); padding: 30px 24px; }
+  	.ck-content blockquote::before,  .ck-content blockquote::after{ width: 24px;}
+  	.ck-content h3{ font-size: 22px; padding: 10px 0 0 0; }
+  	.ck-content p{font-size: 16px;}
+}
+
+body.lang-zh-tw .ck-content p{
+	text-align: justify;
+}
