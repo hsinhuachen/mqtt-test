@@ -1,9 +1,43 @@
 ---
 title: 2020
 ---
+<h2>Api test</h2>
+<div id="status">Loading</div>
+<pre id="debug"></pre>
+<div id="received"></div>
 
 <script>
-  var userLang = navigator.language || navigator.userLanguage;
-  var userLocation = (userLang === 'zh-TW') ? './zh/' : './en/';
-  window.location.href = userLocation;
+connect();
+function connect()
+{  
+       var url = "";     
+       var login = "";
+       var passcode = "";
+       //destination = "/queue/websocket";
+       $("#status").html("Connecting...");
+       client = Stomp.client(url);
+       client.reconnect_delay = 5000;
+		  	client.connect(login, passcode, connectCallback ,errorCallback);
+
+}      
+        
+     
+function errorCallback(frame){
+	console.log('disconnect');
+	$("#status").html("Disconnected");
+	connect();
+	//console.log(frame);
+}
+
+   
+function connectCallback (frame) {  //连接成功时的回调函数
+	$("#status").html("Connected");
+
+    client.subscribe("/queue/websocket", function (result) {  
+    	var content = result.body;
+    		$("#received").html(content);
+        console.log("接收訊息="   +content);
+    }, {});       
+}
+
 </script>

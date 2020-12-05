@@ -1,0 +1,35 @@
+---
+title: 2020
+---
+<h2>Api test</h2>
+<div id="list">
+</div>
+
+<script type="text/javascript">
+	var url = "";
+	var key_id = "";
+	$.ajax({
+		type: 'post',
+		url: url,
+		data: {
+			type: "token",
+			act: "get_token",
+			key: key_id
+		}
+	}).done(function(data) {
+		console.log(data.token);
+
+		$.ajax({
+			type: 'post',
+			url: url,
+			data: {
+				type: "message",
+				act: "get_specification_list",
+				token: data.token
+			}
+		}).done(function(data) {
+			console.log(data);
+		});
+	});
+
+</script>
